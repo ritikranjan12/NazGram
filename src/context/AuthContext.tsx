@@ -33,7 +33,7 @@ export function AuthProvider ({children} : {children : React.ReactNode}){
             setisLoading(true)
             const currAccount = await getCurrUser()
 
-            if(currAccount){
+            if(currAccount && currAccount.name.length>0){
                 setUser({
                     id: currAccount.$id,
                     name: currAccount.name,
